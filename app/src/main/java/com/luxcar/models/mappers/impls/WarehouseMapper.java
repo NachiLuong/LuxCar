@@ -38,5 +38,4 @@ public class WarehouseMapper implements ApplicationMapper<Warehouse> {
             return null;
         }
     }
-
 }

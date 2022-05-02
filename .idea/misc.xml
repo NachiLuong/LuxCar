@@ -3,7 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Workspace/Android/LuxCar/app/src/main/res/layout/activity_main.xml" value="0.15885416666666666" />
+        <entry key="..\:/Workspace/Android/LuxCar/app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="..\:/Workspace/Android/LuxCar/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Workspace/Android/LuxCar/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.227" />
       </map>
     </option>
