@@ -16,7 +16,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Warehouse {
-
     private Integer quantity;
     private Timestamp createdDate;
     private String createdBy;

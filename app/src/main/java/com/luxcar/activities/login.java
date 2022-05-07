@@ -1,4 +1,4 @@
-package com.luxcar.activities.home;
+package com.luxcar.activities;
 
 import android.os.Bundle;
 
