@@ -38,6 +38,7 @@ public class CarMapper implements ApplicationMapper<Car> {
                     .brand(BrandRepository.instance().findOne(cursor.getInt(8)))
                     .build();
         } catch (Exception e) {
+            e.printStackTrace();
             return null;
         }
     }

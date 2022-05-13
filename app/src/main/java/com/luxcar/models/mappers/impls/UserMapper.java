@@ -31,17 +31,18 @@ public class UserMapper implements ApplicationMapper<User> {
         try {
             return User.builder()
                     .id(cursor.getInt(0))
-                    .username(cursor.getString(1))
+                    .email(cursor.getString(1))
                     .password(cursor.getString(2))
                     .gender(Gender.valueOf(cursor.getString(3)))
                     .dob(Timestamp.valueOf(cursor.getString(4)))
                     .phone(cursor.getString(5))
                     .role(Role.valueOf(cursor.getString(6)))
                     .status(Status.valueOf(cursor.getString(7)))
-                    .location(cursor.getString(8))
+                    .address(cursor.getString(8))
                     .bills(BillRepository.instance().findAll("user_id = ?", new String[]{String.valueOf(cursor.getString(0))}))
                     .build();
         } catch (Exception e) {
+            e.printStackTrace();
             return null;
         }
     }
