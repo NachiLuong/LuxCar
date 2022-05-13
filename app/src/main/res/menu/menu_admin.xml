@@ -1,4 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/admin_menu_user"
+            android:title="@string/admin_menu_user"
+            android:icon="@drawable/ic_user"/>
+        <item android:id="@+id/admin_menu_brand"
+            android:title="@string/admin_menu_brand"
+            android:icon="@drawable/ic_brand"/>
+        <item android:id="@+id/admin_menu_car"
+            android:title="@string/admin_menu_car"
+            android:icon="@drawable/ic_car"/>
+        <item android:id="@+id/admin_menu_warehouse"
+            android:title="@string/admin_menu_warehouse"
+            android:icon="@drawable/ic_warehouse"/>
+    </group>
+    <item android:title="Account">
+        <menu>
+            <item android:id="@+id/admin_menu_changePass"
+                android:title="@string/admin_menu_changePass"
+                android:icon="@drawable/ic_changepass"/>
+            <item android:id="@+id/admin_menu_logout"
+                android:title="@string/admin_menu_logout"
+                android:icon="@drawable/ic_logout"/>
+        </menu>
+    </item>
 
 </menu>
