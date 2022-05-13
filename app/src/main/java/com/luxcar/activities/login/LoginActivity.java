@@ -38,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         createEvents();
     }
 
-    void createComponents() {
+    private void createComponents() {
 
         layoutInflater = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
