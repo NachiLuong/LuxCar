@@ -41,41 +41,12 @@ public class MainActivity extends AppCompatActivity {
 
         configure();
 
-//        DATABASE_OPEN_HELPER.onUpgrade(DATABASE_OPEN_HELPER.getWritableDatabase(), 3, 4);
+//        DATABASE_OPEN_HELPER.onUpgrade(DATABASE_OPEN_HELPER.getWritableDatabase(), 4, 5);
 //        DATABASE_OPEN_HELPER.onCreate(DATABASE_OPEN_HELPER.getWritableDatabase());
 //
         createComponents();
         progressBarAnimation();
     }
-
-  /*  @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater =getMenuInflater();
-        inflater.inflate(R.menu.menu_admin, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-       switch (item.getItemId()){
-           case R.id.itemUser:
-               Toast.makeText(this,"User", Toast.LENGTH_SHORT).show();
-               return true;
-           case R.id.itemBrand:
-               Toast.makeText(this,"Brand", Toast.LENGTH_SHORT).show();
-               return true;
-           case R.id.itemCar:
-               Toast.makeText(this,"Car", Toast.LENGTH_SHORT).show();
-               return true;
-           case R.id.itemWarehouse:
-               Toast.makeText(this,"Warehouse", Toast.LENGTH_SHORT).show();
-               return true;
-       }
-
-        return super.onOptionsItemSelected(item);
-    }*/
-
-
 
     private void configure() {
         CONTEXT = this;

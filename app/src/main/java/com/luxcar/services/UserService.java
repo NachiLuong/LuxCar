@@ -2,6 +2,9 @@ package com.luxcar.services;
 
 import androidx.annotation.NonNull;
 
+import com.luxcar.models.entities.User;
+import com.luxcar.repositories.impls.UserRepository;
+
 import java.util.Optional;
 
 public class UserService {
@@ -14,6 +17,10 @@ public class UserService {
             userService = new UserService();
         }
         return userService;
+    }
+
+    public User isExist(@NonNull String email, @NonNull String password) {
+        return UserRepository.instance().findByEmail(email, password);
     }
 
 }

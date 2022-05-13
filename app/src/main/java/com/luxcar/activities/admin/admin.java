@@ -21,7 +21,7 @@ import com.luxcar.activities.admin.fragment.Car;
 import com.luxcar.activities.admin.fragment.ChangePass;
 import com.luxcar.activities.admin.fragment.User;
 import com.luxcar.activities.admin.fragment.Warehouse;
-import com.luxcar.activities.login;
+import com.luxcar.activities.login.LoginSignUpActivity;
 import com.luxcar.configurations.ApplicationProperties;
 
 //import android.widget.Toolbar;
@@ -94,7 +94,7 @@ public class admin extends AppCompatActivity implements  NavigationView.OnNaviga
                 }
 
             case R.id.admin_menu_logout:
-                Intent intent= new Intent(this, login.class);
+                Intent intent= new Intent(this, LoginSignUpActivity.class);
                 startActivity(intent);
                 Toast.makeText(this,"Log out Susses", Toast.LENGTH_SHORT).show();
                 break;

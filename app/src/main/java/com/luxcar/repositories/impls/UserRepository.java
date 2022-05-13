@@ -55,4 +55,12 @@ public class UserRepository extends Repository<User> {
     public Integer delete(String whereClause, String[] whereArgs) {
         return super.delete(table, whereClause, whereArgs);
     }
+
+    public User findByEmail(@NonNull String email, @NonNull String password) {
+        List<User> result = this.query("SELECT * FROM user WHERE email = ? AND password", new String[]{email, password});
+        if (!result.isEmpty()) {
+            return result.get(0);
+        }
+        return null;
+    }
 }

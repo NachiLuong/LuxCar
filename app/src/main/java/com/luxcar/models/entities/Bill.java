@@ -16,6 +16,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Bill {
+
     private Integer id;
     private Integer quantity;
     private Double price;

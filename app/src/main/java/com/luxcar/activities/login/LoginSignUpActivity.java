@@ -1,4 +1,4 @@
-package com.luxcar.activities;
+package com.luxcar.activities.login;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,8 +11,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.luxcar.R;
 import com.luxcar.activities.admin.admin;
 
-public class login extends AppCompatActivity {
-    EditText txtUsername, txtPassword;
+
+public class LoginSignUpActivity extends AppCompatActivity {
+    EditText txtEmail, txtPassword;
     TextView tvForgotPass, tvSignup;
     Button btnLogin;
     @Override
@@ -27,19 +28,19 @@ public class login extends AppCompatActivity {
     }
     private void event(){
         btnLogin.setOnClickListener(view -> {
-            String username = txtUsername.getText().toString();
+            String email = txtEmail.getText().toString();
             String password = txtPassword.getText().toString();
-            if(username.equals("admin") && password.equals("123456")){
+            if(email.equals("admin") && password.equals("123456")){
                 Intent intent = new Intent(this, admin.class);
                 startActivity(intent);
             }
         });
     }
     private void createComponents() {
-        txtUsername = findViewById(R.id.etLoginUsername);
-        txtPassword = findViewById(R.id.etLoginPassword);
-        tvForgotPass = findViewById(R.id.tvLoginForgotPass);
-        tvSignup = findViewById(R.id.tvLoginSignup);
+        txtEmail = findViewById(R.id.etEmail);
+        txtPassword = findViewById(R.id.etPassword);
+        tvForgotPass = findViewById(R.id.tvForgotPassword);
+        tvSignup = findViewById(R.id.tvSignUp);
         btnLogin = findViewById(R.id.btnLogin);
     }
 }
