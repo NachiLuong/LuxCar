@@ -21,8 +21,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {
+
     private Integer id;
-    private String username;
+    private String email;
     private String password;
     private String name;
     private Gender gender;
@@ -30,24 +31,25 @@ public class User {
     private String phone;
     private Role role;
     private Status status;
-    private String location;
+    private String address;
     private Timestamp createdDate;
     private String createdBy;
     private Timestamp modifiedDate;
     private String modifiedBy;
+
     private List<Bill> bills;
 
     @NonNull
     public ContentValues contentValues() {
         ContentValues values = new ContentValues();
-        values.put("username", username);
+        values.put("email", email);
         values.put("password", password);
         values.put("name", name);
         values.put("gender", gender.toString());
         values.put("dob", dob.toString());
         values.put("role", role.toString());
         values.put("status", status.toString());
-        values.put("location", location);
+        values.put("address", address);
         return values;
     }
 }

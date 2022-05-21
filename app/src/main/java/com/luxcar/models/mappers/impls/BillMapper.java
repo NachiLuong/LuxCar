@@ -39,6 +39,7 @@ public class BillMapper implements ApplicationMapper<Bill> {
                     .car(CarRepository.instance().findOne(cursor.getInt(9)))
                     .build();
         } catch (Exception e) {
+            e.printStackTrace();
             return null;
         }
     }

@@ -54,9 +54,10 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper {
                             .description("description " + i)
                             .logo(new byte[9])
                             .build());
+
+
             Log.i("id", "done");
             Log.i("id: ", id.toString());
-
             Log.i("brand " + i, BrandRepository.instance().findOne(id).toString());
         }
     }

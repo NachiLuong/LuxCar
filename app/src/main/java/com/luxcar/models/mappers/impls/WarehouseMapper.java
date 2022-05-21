@@ -35,6 +35,7 @@ public class WarehouseMapper implements ApplicationMapper<Warehouse> {
                     .modifiedBy(cursor.getString(5))
                     .build();
         } catch (Exception e) {
+            e.printStackTrace();
             return null;
         }
     }

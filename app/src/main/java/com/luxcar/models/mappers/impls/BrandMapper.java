@@ -38,6 +38,7 @@ public class BrandMapper implements ApplicationMapper<Brand> {
                     .cars(CarRepository.instance().findAll("brand_id = ?", new String[]{String.valueOf(cursor.getInt(0))}))
                     .build();
         } catch (Exception e) {
+            e.printStackTrace();
             return null;
         }
     }
