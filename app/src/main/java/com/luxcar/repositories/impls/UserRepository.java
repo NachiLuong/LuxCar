@@ -12,7 +12,7 @@ import java.util.Optional;
 
 public class UserRepository extends Repository<User> {
 
-    private static final String table = "user";
+    private static final String table = String.valueOf(User.class);
     private static final UserMapper mapper = UserMapper.instance();
     private static UserRepository userRepository = null;
 

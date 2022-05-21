@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class WarehouseRepository extends Repository<Warehouse> {
-    private static final String table = "warehouse";
+    private static final String table = String.valueOf(Warehouse.class);
     private static final WarehouseMapper mapper = WarehouseMapper.instance();
     private static WarehouseRepository warehouseRepository = null;
 

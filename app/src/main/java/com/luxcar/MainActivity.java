@@ -6,21 +6,16 @@ import static com.luxcar.configurations.ApplicationProperties.SHARED_PREFERENCES
 
 import android.content.Context;
 import android.content.res.AssetManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.luxcar.configurations.DatabaseOpenHelper;
-
-import java.io.IOException;
-import java.io.InputStream;
+import com.luxcar.utillities.ImageHandler;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -56,26 +51,18 @@ public class MainActivity extends AppCompatActivity {
         imageCarAnimationCurrent = 1;
     }
 
-    private Bitmap getImageBitmap(@NonNull String path) {
-        try {
-            InputStream ip = assetManager.open(path);
-            return BitmapFactory.decodeStream(ip);
-        } catch (IOException e) {
-            Log.e("Image", e.getMessage());
-        }
-        return null;
-    }
-
     private void progressBarAnimation() {
         new CountDownTimer(3000, 100) {
             @Override
             public void onTick(long millisUntilFinished) {
                 pbLoading.setProgress(Math.toIntExact(100 - millisUntilFinished / 30));
-                ivCarAnimation.setImageBitmap(getImageBitmap("images/common/vehicle_" + imageCarAnimationCurrent + ".png"));
+                ivCarAnimation.setImageBitmap(
+                        ImageHandler.instance()
+                                .getImage("images/common/vehicle_" + imageCarAnimationCurrent + ".png"));
                 if (imageCarAnimationCurrent == 5) {
                     imageCarAnimationCurrent = 1;
                 } else {
-                    imageCarAnimationCurrent ++;
+                    imageCarAnimationCurrent++;
                 }
             }
 

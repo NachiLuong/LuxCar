@@ -12,7 +12,7 @@ import java.util.Optional;
 
 public class CarRepository extends Repository<Car> {
 
-    private static final String table = "car";
+    private static final String table = String.valueOf(Car.class);
     private static final CarMapper mapper = CarMapper.instance();
     private static CarRepository carRepository = null;
 

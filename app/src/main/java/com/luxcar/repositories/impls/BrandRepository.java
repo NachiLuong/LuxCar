@@ -12,7 +12,7 @@ import java.util.Optional;
 
 public class BrandRepository extends Repository<Brand> {
 
-    private static final String table = "brand";
+    private static final String table = String.valueOf(Brand.class);
     private static final BrandMapper mapper = BrandMapper.instance();
     private static BrandRepository brandRepository = null;
 
