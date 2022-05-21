@@ -50,6 +50,7 @@ public class User {
         values.put("role", role.toString());
         values.put("status", status.toString());
         values.put("address", address);
+        values.put("phone", phone);
         return values;
     }
 }

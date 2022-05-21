@@ -72,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void progressBarAnimation() {
-
         Timer timer = new Timer();
         TimerTask timerTask= new TimerTask() {
             @Override
@@ -93,26 +92,6 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         timer.schedule(timerTask,100,100);
-
-       /* new CountDownTimer(3000, 100) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-                pbLoading.setProgress(Math.toIntExact(100 - millisUntilFinished / 30));
-                ivCarAnimation.setImageBitmap(getImageBitmap("images/common/vehicle_" + imageCarAnimationCurrent + ".png"));
-                if (imageCarAnimationCurrent == 5) {
-                    imageCarAnimationCurrent = 1;
-                } else {
-                    imageCarAnimationCurrent ++;
-                }
-
-            }
-
-            @Override
-            public void onFinish() {
-                Log.e("Progress: ", "done");
-            }
-        }.start();*/
-
 
     }
 }

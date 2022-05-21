@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,6 +29,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private TextView tvForgotPassword;
     private TextView tvSignUp;
+    ImageView ivCancel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +51,7 @@ public class LoginActivity extends AppCompatActivity {
 
         tvForgotPassword = findViewById(R.id.tvForgotPassword);
         tvSignUp = findViewById(R.id.tvSignUp);
+        ivCancel = findViewById(R.id.ivLoginCancel);
     }
 
     private void createEvents() {
@@ -65,12 +68,13 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         tvForgotPassword.setOnClickListener(view -> {
-
+            Intent intentForgotPassword = new Intent(LoginActivity.this, LoginForgotPassword.class);
+            startActivity(intentForgotPassword);
         });
 
         tvSignUp.setOnClickListener(view -> {
-            Intent signUpIntent = new Intent(this, LoginSignUpActivity.class);
-            startActivity(signUpIntent);
+            Intent intentSignUp = new Intent(LoginActivity.this, LoginSignUpActivity.class);
+            startActivity(intentSignUp);
         });
 
 
