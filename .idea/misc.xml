@@ -4,6 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Workspace/Android/LuxCar/app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="..\:/Workspace/Android/LuxCar/app/src/main/res/layout/activity_login2.xml" value="0.3625" />
+        <entry key="..\:/Workspace/Android/LuxCar/app/src/main/res/layout/activity_login_forgot_password.xml" value="0.3625" />
+        <entry key="..\:/Workspace/Android/LuxCar/app/src/main/res/layout/activity_login_sign_up.xml" value="0.3625" />
+        <entry key="..\:/Workspace/Android/LuxCar/app/src/main/res/layout/activity_login_sign_up2.xml" value="0.3625" />
         <entry key="..\:/Workspace/Android/LuxCar/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Workspace/Android/LuxCar/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.227" />
       </map>
