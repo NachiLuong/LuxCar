@@ -63,4 +63,11 @@ public class UserRepository extends Repository<User> {
         }
         return null;
     }
+    public Boolean findEmailExist(@NonNull String email) {
+        List<User> result = this.query("SELECT name FROM user WHERE email = ?", new String[]{email});
+        if (!result.isEmpty()) {
+            return true;
+        }
+        return false;
+    }
 }

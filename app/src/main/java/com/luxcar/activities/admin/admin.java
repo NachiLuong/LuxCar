@@ -1,5 +1,6 @@
 package com.luxcar.activities.admin;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -21,7 +22,7 @@ import com.luxcar.activities.admin.fragment.Car;
 import com.luxcar.activities.admin.fragment.ChangePass;
 import com.luxcar.activities.admin.fragment.User;
 import com.luxcar.activities.admin.fragment.Warehouse;
-import com.luxcar.activities.login.LoginSignUpActivity;
+import com.luxcar.activities.login.LoginActivity;
 import com.luxcar.configurations.ApplicationProperties;
 
 //import android.widget.Toolbar;
@@ -59,6 +60,7 @@ public class admin extends AppCompatActivity implements  NavigationView.OnNaviga
         navigationView= findViewById(R.id.nvAdmin);
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
@@ -94,7 +96,7 @@ public class admin extends AppCompatActivity implements  NavigationView.OnNaviga
                 }
 
             case R.id.admin_menu_logout:
-                Intent intent= new Intent(this, LoginSignUpActivity.class);
+                Intent intent= new Intent(this, LoginActivity.class);
                 startActivity(intent);
                 Toast.makeText(this,"Log out Susses", Toast.LENGTH_SHORT).show();
                 break;

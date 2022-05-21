@@ -22,5 +22,11 @@ public class UserService {
     public User isExist(@NonNull String email, @NonNull String password) {
         return UserRepository.instance().findByEmail(email, password);
     }
+    public Boolean isEmailExist(@NonNull String email){
+        return UserRepository.instance().findEmailExist(email);
+    }
+    public Integer addUser(User user){
+        return UserRepository.instance().insert(user);
+    }
 
 }
