@@ -1,15 +1,5 @@
 <resources>
     <string name="app_name">LuxCar</string>
-
-<!--    ADMIN-->
-    <string name="admin_menu_user">User</string>
-    <string name="admin_menu_brand">Brand</string>
-    <string name="admin_menu_car">Car</string>
-    <string name="admin_menu_warehouse">Warehouse</string>
-    <string name="admin_menu_changePass">Change Password</string>
-    <string name="admin_menu_logout">Log out</string>
-    <string name="admin_menu_open">Open tools</string>
-    <string name="admin_menu_close">Close tools</string>
-
-
+    <string name="colse">Colse</string>
+    <string name="open">Open</string>
 </resources>

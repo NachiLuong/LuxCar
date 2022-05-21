@@ -3,20 +3,27 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Ki 6/Lap Trinh Di Dong/Final-Project/num1/LuxCar/app/src/main/res/drawable-anydpi/icon-cancel.xml" value="0.1835" />
-        <entry key="..\:/Ki 6/Lap Trinh Di Dong/Final-Project/num1/LuxCar/app/src/main/res/drawable/ic_baseline_people_24.xml" value="0.1425" />
-        <entry key="..\:/Ki 6/Lap Trinh Di Dong/Final-Project/num1/LuxCar/app/src/main/res/layout/activity_admin.xml" value="0.25" />
-        <entry key="..\:/Ki 6/Lap Trinh Di Dong/Final-Project/num1/LuxCar/app/src/main/res/layout/activity_forgot_password.xml" value="0.25" />
-        <entry key="..\:/Ki 6/Lap Trinh Di Dong/Final-Project/num1/LuxCar/app/src/main/res/layout/activity_login.xml" value="0.33" />
-        <entry key="..\:/Ki 6/Lap Trinh Di Dong/Final-Project/num1/LuxCar/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/Ki 6/Lap Trinh Di Dong/Final-Project/num1/LuxCar/app/src/main/res/layout/activity_sigup.xml" value="0.24806201550387597" />
-        <entry key="..\:/Ki 6/Lap Trinh Di Dong/Final-Project/num1/LuxCar/app/src/main/res/layout/admin_fragment_brand.xml" value="0.209375" />
-        <entry key="..\:/Ki 6/Lap Trinh Di Dong/Final-Project/num1/LuxCar/app/src/main/res/layout/admin_fragment_car.xml" value="0.209375" />
-        <entry key="..\:/Ki 6/Lap Trinh Di Dong/Final-Project/num1/LuxCar/app/src/main/res/layout/admin_fragment_changepass.xml" value="0.209375" />
-        <entry key="..\:/Ki 6/Lap Trinh Di Dong/Final-Project/num1/LuxCar/app/src/main/res/layout/admin_fragment_user.xml" value="0.209375" />
-        <entry key="..\:/Ki 6/Lap Trinh Di Dong/Final-Project/num1/LuxCar/app/src/main/res/layout/admin_fragment_warehouse.xml" value="0.209375" />
-        <entry key="..\:/Ki 6/Lap Trinh Di Dong/Final-Project/num1/LuxCar/app/src/main/res/layout/layout_admin_header_nav.xml" value="0.5" />
-        <entry key="..\:/Ki 6/Lap Trinh Di Dong/Final-Project/num1/LuxCar/app/src/main/res/menu/menu_admin.xml" value="0.209375" />
+        <entry key="..\:/LTDD1/LuxCar/app/src/main/res/drawable-v24/button_add_background.xml" value="0.1" />
+        <entry key="..\:/LTDD1/LuxCar/app/src/main/res/drawable-v24/categories_background.xml" value="0.1" />
+        <entry key="..\:/LTDD1/LuxCar/app/src/main/res/drawable-v24/categories_background1.xml" value="0.1" />
+        <entry key="..\:/LTDD1/LuxCar/app/src/main/res/drawable/ic_car.xml" value="0.157" />
+        <entry key="..\:/LTDD1/LuxCar/app/src/main/res/drawable/ic_contacts.xml" value="0.157" />
+        <entry key="..\:/LTDD1/LuxCar/app/src/main/res/drawable/ic_home.xml" value="0.157" />
+        <entry key="..\:/LTDD1/LuxCar/app/src/main/res/drawable/ic_search.xml" value="0.115" />
+        <entry key="..\:/LTDD1/LuxCar/app/src/main/res/drawable/login_background.xml" value="0.115" />
+        <entry key="..\:/LTDD1/LuxCar/app/src/main/res/drawable/search.xml" value="0.115" />
+        <entry key="..\:/LTDD1/LuxCar/app/src/main/res/layout/acctivity_home_custom_item_car.xml" value="0.22" />
+        <entry key="..\:/LTDD1/LuxCar/app/src/main/res/layout/acctivity_home_custom_item_categories.xml" value="0.10625" />
+        <entry key="..\:/LTDD1/LuxCar/app/src/main/res/layout/activity_car_recipe.xml" value="0.22" />
+        <entry key="..\:/LTDD1/LuxCar/app/src/main/res/layout/activity_cooking_recipe.xml" value="0.1640625" />
+        <entry key="..\:/LTDD1/LuxCar/app/src/main/res/layout/activity_home.xml" value="0.2132701421800948" />
+        <entry key="..\:/LTDD1/LuxCar/app/src/main/res/layout/activity_login.xml" value="0.11944444444444445" />
+        <entry key="..\:/LTDD1/LuxCar/app/src/main/res/layout/activity_main.xml" value="0.1796875" />
+        <entry key="..\:/LTDD1/LuxCar/app/src/main/res/layout/custom_item_car.xml" value="0.1675925925925926" />
+        <entry key="..\:/LTDD1/LuxCar/app/src/main/res/layout/custom_item_categories.xml" value="0.16354166666666667" />
+        <entry key="..\:/LTDD1/LuxCar/app/src/main/res/layout/custom_item_food.xml" value="0.16354166666666667" />
+        <entry key="..\:/LTDD1/LuxCar/app/src/main/res/layout/header_drawer_layout.xml" value="0.1" />
+        <entry key="..\:/LTDD1/LuxCar/app/src/main/res/menu/menu_item_drawer.xml" value="0.3333333333333333" />
         <entry key="..\:/Workspace/Android/LuxCar/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/Workspace/Android/LuxCar/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Workspace/Android/LuxCar/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.227" />
