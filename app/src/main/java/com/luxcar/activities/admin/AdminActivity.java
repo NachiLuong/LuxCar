@@ -17,17 +17,17 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.navigation.NavigationView;
 import com.luxcar.R;
-import com.luxcar.activities.admin.fragment.Brand;
-import com.luxcar.activities.admin.fragment.Car;
-import com.luxcar.activities.admin.fragment.ChangePass;
-import com.luxcar.activities.admin.fragment.User;
-import com.luxcar.activities.admin.fragment.Warehouse;
+import com.luxcar.activities.admin.fragment.BrandActivity;
+import com.luxcar.activities.admin.fragment.CarActivity;
+import com.luxcar.activities.admin.fragment.ChangePassActivity;
+import com.luxcar.activities.admin.fragment.UserActivity;
+import com.luxcar.activities.admin.fragment.WarehouseActivity;
 import com.luxcar.activities.login.LoginActivity;
 import com.luxcar.configurations.ApplicationProperties;
 
 //import android.widget.Toolbar;
 
-public class admin extends AppCompatActivity implements  NavigationView.OnNavigationItemSelectedListener {
+public class AdminActivity extends AppCompatActivity implements  NavigationView.OnNavigationItemSelectedListener {
     DrawerLayout drawerLayout;
     Toolbar toolbar;
     NavigationView navigationView;
@@ -42,7 +42,7 @@ public class admin extends AppCompatActivity implements  NavigationView.OnNaviga
         actionToolBar();
 
         navigationView.setNavigationItemSelectedListener(this);
-        replayFragment(new User());
+        replayFragment(new UserActivity());
         navigationView.getMenu().findItem(R.id.admin_menu_user).setChecked(true);
     }
 
@@ -66,31 +66,31 @@ public class admin extends AppCompatActivity implements  NavigationView.OnNaviga
         switch (item.getItemId()){
             case R.id.admin_menu_user:
                 if (curFragment != ApplicationProperties.ADMIN_FRAGMENT_USER){
-                    replayFragment(new User());
+                    replayFragment(new UserActivity());
                     curFragment = ApplicationProperties.ADMIN_FRAGMENT_USER;
                     break;
                 }
             case R.id.admin_menu_brand:
                 if (curFragment != ApplicationProperties.ADMIN_FRAGMENT_BRAND){
-                    replayFragment(new Brand());
+                    replayFragment(new BrandActivity());
                     curFragment = ApplicationProperties.ADMIN_FRAGMENT_BRAND;
                     break;
                 }
             case R.id.admin_menu_car:
                 if (curFragment != ApplicationProperties.ADMIN_FRAGMENT_CAR){
-                    replayFragment(new Car());
+                    replayFragment(new CarActivity());
                     curFragment = ApplicationProperties.ADMIN_FRAGMENT_CAR;
                     break;
                 }
             case R.id.admin_menu_warehouse:
                 if (curFragment != ApplicationProperties.ADMIN_FRAGMENT_WAREHOUSE){
-                    replayFragment(new Warehouse());
+                    replayFragment(new WarehouseActivity());
                     curFragment = ApplicationProperties.ADMIN_FRAGMENT_WAREHOUSE;
                     break;
                 }
             case R.id.admin_menu_changePass:
                 if (curFragment != ApplicationProperties.ADMIN_FRAGMENT_CHANGEPASS){
-                    replayFragment(new ChangePass());
+                    replayFragment(new ChangePassActivity());
                     curFragment = ApplicationProperties.ADMIN_FRAGMENT_CHANGEPASS;
                     break;
                 }

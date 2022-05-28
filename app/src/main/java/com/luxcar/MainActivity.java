@@ -18,7 +18,7 @@ import android.widget.ProgressBar;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.luxcar.activities.admin.admin;
+import com.luxcar.activities.admin.AdminActivity;
 import com.luxcar.configurations.DatabaseOpenHelper;
 
 import java.io.IOException;
@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if(counter==100){
                     timer.cancel();
-                    Intent intent= new Intent(MainActivity.this, admin.class);
+                    Intent intent= new Intent(MainActivity.this, AdminActivity.class);
                     startActivity(intent);
                 }
             }
