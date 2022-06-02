@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -12,11 +13,19 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.basgeekball.awesomevalidation.AwesomeValidation;
+import com.basgeekball.awesomevalidation.ValidationStyle;
+import com.basgeekball.awesomevalidation.utility.RegexTemplate;
 import com.luxcar.R;
+import com.luxcar.models.entities.User;
 import com.luxcar.models.types.Gender;
+import com.luxcar.models.types.Role;
+import com.luxcar.models.types.Status;
+import com.luxcar.services.UserService;
 
 import java.sql.Timestamp;
 import java.text.DateFormat;
@@ -34,7 +43,7 @@ public class LoginSignUpActivity extends AppCompatActivity {
     RadioButton rbMale, rbFemale, rbOrder;
     RadioGroup rdgSex;
     Context context;
-//    AwesomeValidation awesomeValidation;
+    AwesomeValidation awesomeValidation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,7 +81,8 @@ public class LoginSignUpActivity extends AppCompatActivity {
             }
         });
         btnSignup.setOnClickListener(v -> {
-//            if (awesomeValidation.validate()){
+            validate();
+            if (awesomeValidation.validate()) {
 
                 Gender gender;
                 String email = etSignupEmail.getText().toString();
@@ -94,22 +104,22 @@ public class LoginSignUpActivity extends AppCompatActivity {
                 }
                 Timestamp timeStampDate = new Timestamp(date.getTime());
                 // xác dinh gioi tinh
-                int idChecked	=	rdgSex.getCheckedRadioButtonId();
-                switch (idChecked){
+                int idChecked = rdgSex.getCheckedRadioButtonId();
+                switch (idChecked) {
                     case R.id.rbFemale:
-                        gender =Gender.FEMALE;
+                        gender = Gender.FEMALE;
                         break;
                     case R.id.rbMale:
-                        gender =Gender.MALE;
+                        gender = Gender.MALE;
                         break;
                     case R.id.rbOrder:
-                        gender =Gender.OTHER;
+                        gender = Gender.OTHER;
                         break;
                     default:
                         throw new IllegalStateException("Unexpected value: " + idChecked);
                 }
                 // kiểm tra email tồn tại chưa
-              /*  if (!UserService.instance().isEmailExist(email)){ //chưa tồn tại
+                if (!UserService.instance().isEmailExist(email)){ //chưa tồn tại
                     Integer a= UserService.instance().addUser(User.builder()
                             .email(email)
                             .password(password)
@@ -128,20 +138,21 @@ public class LoginSignUpActivity extends AppCompatActivity {
                 }
                 Intent intent = new Intent(this, LoginActivity.class);
                 startActivity(intent);
-                Toast.makeText(this, "Sign Up success", Toast.LENGTH_SHORT).show();*/
-
+                Toast.makeText(this, "Sign Up success", Toast.LENGTH_SHORT).show();
+            }
         });
     }
-   /* private void validate(){
+    private void validate(){
         awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
-        awesomeValidation.addValidation(this, R.id.etSignupName, RegexTemplate.NOT_EMPTY, R.string.validateName);
-        awesomeValidation.addValidation(this, R.id.etSignupPhone, "[0-9]{8,11}$", R.string.validatePhone);
         awesomeValidation.addValidation(this, R.id.etSignupEmail, Patterns.EMAIL_ADDRESS, R.string.validateEmail);
         awesomeValidation.addValidation(this, R.id.etSignupPassword, ".{6,}", R.string.validatePassword);
         awesomeValidation.addValidation(this, R.id.etSignupRepeatPassword, R.id.etSignupPassword, R.string.validateRepeatPass);
+        awesomeValidation.addValidation(this, R.id.etSignupName, RegexTemplate.NOT_EMPTY, R.string.validateName);
+        awesomeValidation.addValidation(this, R.id.etSignupPhone, "[0-9]{8,11}$", R.string.validatePhone);
+        awesomeValidation.addValidation(this, R.id.etSignupDob, RegexTemplate.NOT_EMPTY, R.string.validateDob);
         awesomeValidation.addValidation(this, R.id.etSignupAddress, RegexTemplate.NOT_EMPTY, R.string.validateAddress);
 
-    }*/
+    }
     private void createComponents() {
         tvSignupLogin = findViewById(R.id.tvSignupLogin);
 

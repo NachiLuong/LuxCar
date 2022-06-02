@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingLeft="12dp"
+    android:paddingBottom="12dp">
+
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/adminItemTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Item Top"
+            android:textSize="32sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/adminItemDown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Item down"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="right"
+        android:layout_marginTop="10dp"
+        >
+        <ImageView
+            android:id="@+id/adminItemEdit"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_edit"
+            >
+        </ImageView>
+        <ImageView
+            android:id="@+id/adminItemDelete"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_delete">
+        </ImageView>
+    </LinearLayout>
+
+</LinearLayout>
