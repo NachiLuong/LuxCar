@@ -12,7 +12,7 @@ import java.util.Optional;
 
 public class UserRepository extends Repository<User> {
 
-    private static final String table = String.valueOf(User.class);
+    private static final String table = "car";
     private static final UserMapper mapper = UserMapper.instance();
     private static UserRepository userRepository = null;
 
@@ -62,5 +62,12 @@ public class UserRepository extends Repository<User> {
             return result.get(0);
         }
         return null;
+    }
+    public Boolean findEmailExist(@NonNull String email) {
+        List<User> result = this.query("SELECT name FROM user WHERE email = ?", new String[]{email});
+        if (!result.isEmpty()) {
+            return true;
+        }
+        return false;
     }
 }

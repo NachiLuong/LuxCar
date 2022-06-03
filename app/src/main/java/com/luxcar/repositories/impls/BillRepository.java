@@ -12,7 +12,7 @@ import java.util.Optional;
 
 public class BillRepository extends Repository<Bill> {
 
-    private static final String table = String.valueOf(Bill.class);
+    private static final String table = "bill";
     private static final BillMapper mapper = BillMapper.instance();
     private static BillRepository billRepository = null;
 

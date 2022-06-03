@@ -39,6 +39,23 @@ public class User {
 
     private List<Bill> bills;
 
+    public User(String email, String name) {
+        this.email = email;
+        this.name = name;
+    }
+
+    public User(String email, String password, String name, Gender gender, Timestamp dob, String phone, Role role, Status status, String address) {
+        this.email = email;
+        this.password = password;
+        this.name = name;
+        this.gender = gender;
+        this.dob = dob;
+        this.phone = phone;
+        this.role = role;
+        this.status = status;
+        this.address = address;
+    }
+
     @NonNull
     public ContentValues contentValues() {
         ContentValues values = new ContentValues();
@@ -50,6 +67,7 @@ public class User {
         values.put("role", role.toString());
         values.put("status", status.toString());
         values.put("address", address);
+        values.put("phone", phone);
         return values;
     }
 }
