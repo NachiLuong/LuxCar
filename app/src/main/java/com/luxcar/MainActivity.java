@@ -18,11 +18,16 @@ import android.widget.ProgressBar;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.luxcar.activities.admin.admin;
+import com.luxcar.activities.admin.AdminActivity;
 import com.luxcar.configurations.DatabaseOpenHelper;
+import com.luxcar.models.entities.Brand;
+import com.luxcar.models.entities.Car;
+import com.luxcar.repositories.impls.BrandRepository;
+import com.luxcar.repositories.impls.CarRepository;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -45,7 +50,12 @@ public class MainActivity extends AppCompatActivity {
         DATABASE_OPEN_HELPER.onUpgrade(DATABASE_OPEN_HELPER.getWritableDatabase(), 4, 5);
 //        DATABASE_OPEN_HELPER.onCreate(DATABASE_OPEN_HELPER.getWritableDatabase());
         createComponents();
-        progressBarAnimation();
+//        progressBarAnimation();
+
+        Intent intent = new Intent(MainActivity.this, AdminActivity.class);
+        List<Brand> all = BrandRepository.instance().findAll();
+        List<Car> cars = CarRepository.instance().findAll();
+        startActivity(intent);
     }
 
     private void configure() {
@@ -72,7 +82,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void progressBarAnimation() {
-
         Timer timer = new Timer();
         TimerTask timerTask = new TimerTask() {
             @Override
@@ -88,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (counter == 100) {
                     timer.cancel();
-                    Intent intent = new Intent(MainActivity.this, admin.class);
+                    Intent intent = new Intent(MainActivity.this, AdminActivity.class);
                     startActivity(intent);
                 }
             }
@@ -113,7 +122,5 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("Progress: ", "done");
             }
         }.start();*/
-
-
     }
 }
