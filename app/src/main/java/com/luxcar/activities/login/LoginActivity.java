@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,6 +14,9 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.basgeekball.awesomevalidation.AwesomeValidation;
+import com.basgeekball.awesomevalidation.ValidationStyle;
+import com.basgeekball.awesomevalidation.utility.RegexTemplate;
 import com.luxcar.R;
 import com.luxcar.configurations.ApplicationProperties;
 import com.luxcar.models.entities.User;
@@ -30,6 +34,7 @@ public class LoginActivity extends AppCompatActivity {
     private TextView tvForgotPassword;
     private TextView tvSignUp;
     ImageView ivCancel;
+    AwesomeValidation awesomeValidation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,15 +61,19 @@ public class LoginActivity extends AppCompatActivity {
 
     private void createEvents() {
         btnLogin.setOnClickListener(view -> {
-            String email = etEmail.getText().toString();
-            String password = etPassword.getText().toString();
-            User user = UserService.instance().isExist(email, password);
-            if (user != null) {
-                SharedPreferences.Editor edit = ApplicationProperties.SHARED_PREFERENCES.edit();
-                edit.putInt("user_id", user.getId());
-                edit.apply();
-                Log.i("Login", "Success!");
+            validate();
+            if(awesomeValidation.validate()){
+                String email = etEmail.getText().toString();
+                String password = etPassword.getText().toString();
+                User user = UserService.instance().isExist(email, password);
+                if (user != null) {
+                    SharedPreferences.Editor edit = ApplicationProperties.SHARED_PREFERENCES.edit();
+                    edit.putInt("user_id", user.getId());
+                    edit.apply();
+                    Log.i("Login", "Success!");
+                }
             }
+
         });
 
         tvForgotPassword.setOnClickListener(view -> {
@@ -76,7 +85,10 @@ public class LoginActivity extends AppCompatActivity {
             Intent intentSignUp = new Intent(LoginActivity.this, LoginSignUpActivity.class);
             startActivity(intentSignUp);
         });
-
+    }
+    private void validate(){
+        awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
+        awesomeValidation.addValidation(this, R.id.etEmail, Patterns.EMAIL_ADDRESS, R.string.validateEmail);
 
     }
 }

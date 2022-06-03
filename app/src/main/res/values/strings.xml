@@ -10,6 +10,13 @@
     <string name="admin_menu_logout">Log out</string>
     <string name="admin_menu_open">Open tools</string>
     <string name="admin_menu_close">Close tools</string>
+    <string name="validateName">Please enter name</string>
+    <string name="validatePhone">Please enter correct phone number</string>
+    <string name="validateEmail">Please enter correct email</string>
+    <string name="validatePassword">Please enter password</string>
+    <string name="validateRepeatPass">Password not match</string>
+    <string name="validateAddress">Please enter address</string>
+    <string name="validateDob">Please enter Birthday</string>
 
 
 </resources>

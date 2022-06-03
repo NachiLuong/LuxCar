@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.luxcar">
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -9,6 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LuxCar">
+
         <activity
             android:name=".activities.login.LoginSignUpActivity"
             android:exported="true">
@@ -38,7 +40,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.admin.admin"
+            android:name=".activities.admin.AdminActivity"
             android:exported="false"
             android:theme="@style/AppTheme"
             />
