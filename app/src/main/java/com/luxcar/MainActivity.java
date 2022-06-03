@@ -32,7 +32,8 @@ public class MainActivity extends AppCompatActivity {
     private ProgressBar pbLoading;
     private ImageView ivCarAnimation;
     private int imageCarAnimationCurrent;
-    int counter =0;
+    int counter = 0;
+
     @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +42,8 @@ public class MainActivity extends AppCompatActivity {
 
         configure();
 
-//        DATABASE_OPEN_HELPER.onUpgrade(DATABASE_OPEN_HELPER.getWritableDatabase(), 4, 5);
+        DATABASE_OPEN_HELPER.onUpgrade(DATABASE_OPEN_HELPER.getWritableDatabase(), 4, 5);
 //        DATABASE_OPEN_HELPER.onCreate(DATABASE_OPEN_HELPER.getWritableDatabase());
-//
         createComponents();
         progressBarAnimation();
     }
@@ -74,25 +74,26 @@ public class MainActivity extends AppCompatActivity {
     private void progressBarAnimation() {
 
         Timer timer = new Timer();
-        TimerTask timerTask= new TimerTask() {
+        TimerTask timerTask = new TimerTask() {
             @Override
             public void run() {
                 counter++;
                 pbLoading.setProgress(counter);
+
                 ivCarAnimation.setImageBitmap(getImageBitmap("images/common/vehicle_" + imageCarAnimationCurrent + ".png"));
                 if (imageCarAnimationCurrent == 5) {
                     imageCarAnimationCurrent = 1;
                 } else {
-                    imageCarAnimationCurrent ++;
+                    imageCarAnimationCurrent++;
                 }
-                if(counter==100){
+                if (counter == 100) {
                     timer.cancel();
-                    Intent intent= new Intent(MainActivity.this, admin.class);
+                    Intent intent = new Intent(MainActivity.this, admin.class);
                     startActivity(intent);
                 }
             }
         };
-        timer.schedule(timerTask,100,100);
+        timer.schedule(timerTask, 100, 100);
 
        /* new CountDownTimer(3000, 100) {
             @Override
