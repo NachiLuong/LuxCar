@@ -5,6 +5,7 @@ import androidx.annotation.NonNull;
 import com.luxcar.models.entities.User;
 import com.luxcar.repositories.impls.UserRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 public class UserService {
@@ -31,5 +32,5 @@ public class UserService {
     public Integer deleteUser(String whereClause, String[] whereArgs){
         return UserRepository.instance().delete(whereClause, whereArgs);
     }
-
+    public List<User> findAllUser(){return UserRepository.instance().findAll();}
 }
