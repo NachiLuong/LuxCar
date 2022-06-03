@@ -8,7 +8,6 @@ import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 
 import com.luxcar.R;
 import com.luxcar.activities.admin.fragment.UserActivity;
@@ -56,8 +55,8 @@ public class UserAdapter extends BaseAdapter {
 
             viewHolder.imgDelete = view.findViewById(R.id.adminItemEdit);
             viewHolder.imgEdit= view.findViewById(R.id.adminItemDelete);
-            viewHolder.name = view.findViewById(R.id.adminItemDown);
-            viewHolder.email = view.findViewById(R.id.adminItemTop);
+//            viewHolder.name = view.findViewById(R.id.adminItemDown);
+//            viewHolder.email = view.findViewById(R.id.adminItemTop);
 
             view.setTag(viewHolder);
 
@@ -67,8 +66,8 @@ public class UserAdapter extends BaseAdapter {
         User user = list.get(i);
 
 
-        viewHolder.name.setText(user.getName());
-        viewHolder.email.setText(user.getEmail());
+//        viewHolder.name.setText(user.getName());
+//        viewHolder.email.setText(user.getEmail());
 
 //        viewHolder.imgEdit.setOnClickListener(view12 ->
 //                context.dialogUpdate(baiHoc.getTen(), baiHoc.getNoidung(), baiHoc.getId())

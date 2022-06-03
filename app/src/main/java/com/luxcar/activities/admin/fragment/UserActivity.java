@@ -19,7 +19,6 @@ import com.luxcar.configurations.DatabaseOpenHelper;
 import com.luxcar.models.entities.User;
 import com.luxcar.repositories.impls.UserRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
