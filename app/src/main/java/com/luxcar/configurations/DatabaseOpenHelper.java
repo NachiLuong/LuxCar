@@ -1,6 +1,7 @@
 package com.luxcar.configurations;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -44,7 +45,16 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper {
 
         this.onCreate(sqLiteDatabase);
     }
-
+   /* //Truy vấn không trả kêt quả
+    public void QueryData(String sql){
+        SQLiteDatabase database  = getWritableDatabase();
+        database.execSQL(sql);
+    }
+    //Truy vấn trả kết quả
+    public Cursor GetData(String sql){
+        SQLiteDatabase database = getReadableDatabase();
+        return database.rawQuery(sql, null);
+    }*/
     private void insertData() {
 
         for (int i = 0; i < 10; i++) {

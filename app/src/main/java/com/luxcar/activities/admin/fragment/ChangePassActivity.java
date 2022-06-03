@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment;
 
 import com.luxcar.R;
 
-public class ChangePass extends Fragment {
+public class ChangePassActivity extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

@@ -11,10 +11,10 @@ import androidx.fragment.app.Fragment;
 
 import com.luxcar.R;
 
-public class Car extends Fragment {
+public class WarehouseActivity extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.admin_fragment_car, container,false);
+        return inflater.inflate(R.layout.admin_fragment_warehouse, container,false);
     }
 }
