@@ -45,7 +45,7 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper {
 
         this.onCreate(sqLiteDatabase);
     }
-    //Truy vấn không trả kêt quả
+   /* //Truy vấn không trả kêt quả
     public void QueryData(String sql){
         SQLiteDatabase database  = getWritableDatabase();
         database.execSQL(sql);
@@ -54,7 +54,7 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper {
     public Cursor GetData(String sql){
         SQLiteDatabase database = getReadableDatabase();
         return database.rawQuery(sql, null);
-    }
+    }*/
     private void insertData() {
 
         for (int i = 0; i < 10; i++) {

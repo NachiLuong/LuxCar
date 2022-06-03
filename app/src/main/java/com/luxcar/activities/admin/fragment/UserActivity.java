@@ -1,13 +1,9 @@
 package com.luxcar.activities.admin.fragment;
 
-import android.content.Context;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -15,14 +11,13 @@ import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.luxcar.R;
 import com.luxcar.adapters.UserAdapter;
 import com.luxcar.configurations.DatabaseOpenHelper;
 import com.luxcar.models.entities.User;
-import com.luxcar.services.UserService;
+import com.luxcar.repositories.impls.UserRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +25,7 @@ import java.util.List;
 
 
 public class UserActivity extends Fragment  {
-    ArrayList<User> arrayList;
+    List<User> users;
     UserAdapter adapter;
     DatabaseOpenHelper databaseOpenHelper;
 
@@ -58,11 +53,11 @@ public class UserActivity extends Fragment  {
     private void createEvents() {
     }
     private void getData(){
-        arrayList = new ArrayList<>();
-        adapter = new UserAdapter(this, R.layout.admin_single_item, arrayList);
+        users = UserRepository.instance().findAll();
+        adapter = new UserAdapter(this, R.layout.admin_single_item, users);
         lv.setAdapter(adapter);
-
-        try {
+        adapter.notifyDataSetChanged();
+      /*  try {
             Cursor users = databaseOpenHelper.GetData("SELECT * FROM user");
             arrayList.clear();
             while (users.moveToNext()){
@@ -73,7 +68,7 @@ public class UserActivity extends Fragment  {
             adapter.notifyDataSetChanged();
         }catch (Exception e){
             System.out.println(e);
-        }
+        }*/
 
     }
 //    public void dialogUpdate(){

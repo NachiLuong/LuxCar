@@ -10,6 +10,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.luxcar.R;
+import com.luxcar.utils.JavaMail;
 
 public class LoginForgotPassword extends AppCompatActivity {
     EditText etForgotEmail;
@@ -31,8 +32,14 @@ public class LoginForgotPassword extends AppCompatActivity {
     }
     private void createEvents(){
         btnSend.setOnClickListener(v -> {
-            String email = etForgotEmail.getText().toString();
-            // hàm sử lý email
+            String mail = etForgotEmail.getText().toString();
+            String message = "hahahaha";
+            String subject = "Trung Dep Trai";
+
+            //Send Mail
+            JavaMail javaMailAPI = new JavaMail(this,mail,subject,message);
+
+            javaMailAPI.execute();
 
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);

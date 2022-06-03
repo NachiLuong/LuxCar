@@ -3,6 +3,9 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.Toast;
+
+import com.luxcar.constants.Email;
+
 import java.util.Properties;
 import javax.mail.Message;
 import javax.mail.MessagingException;
@@ -12,14 +15,7 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 public class JavaMail extends AsyncTask<Void,Void,Void> {
-    //Add those line in dependencies
-    //implementation files('libs/activation.jar')
-    //implementation files('libs/additionnal.jar')
-    //implementation files('libs/mail.jar')
 
-    //Need INTERNET permission
-
-    //Variables
     private Context mContext;
     private Session mSession;
 
@@ -30,7 +26,7 @@ public class JavaMail extends AsyncTask<Void,Void,Void> {
     private ProgressDialog mProgressDialog;
 
     //Constructor
-    public JavaMailAPI(Context mContext, String mEmail, String mSubject, String mMessage) {
+    public JavaMail(Context mContext, String mEmail, String mSubject, String mMessage) {
         this.mContext = mContext;
         this.mEmail = mEmail;
         this.mSubject = mSubject;
@@ -72,7 +68,7 @@ public class JavaMail extends AsyncTask<Void,Void,Void> {
                 new javax.mail.Authenticator() {
                     //Authenticating the password
                     protected PasswordAuthentication getPasswordAuthentication() {
-                        return new PasswordAuthentication(Utils.EMAIL, Utils.PASSWORD);
+                        return new PasswordAuthentication(Email.EMAIL, Email.PASSWORD);
                     }
                 });
 
@@ -81,7 +77,7 @@ public class JavaMail extends AsyncTask<Void,Void,Void> {
             MimeMessage mm = new MimeMessage(mSession);
 
             //Setting sender address
-            mm.setFrom(new InternetAddress(Utils.EMAIL));
+            mm.setFrom(new InternetAddress(Email.EMAIL));
             //Adding receiver
             mm.addRecipient(Message.RecipientType.TO, new InternetAddress(mEmail));
             //Adding subject
@@ -90,26 +86,6 @@ public class JavaMail extends AsyncTask<Void,Void,Void> {
             mm.setText(mMessage);
             //Sending email
             Transport.send(mm);
-
-//            BodyPart messageBodyPart = new MimeBodyPart();
-//
-//            messageBodyPart.setText(message);
-//
-//            Multipart multipart = new MimeMultipart();
-//
-//            multipart.addBodyPart(messageBodyPart);
-//
-//            messageBodyPart = new MimeBodyPart();
-//
-//            DataSource source = new FileDataSource(filePath);
-//
-//            messageBodyPart.setDataHandler(new DataHandler(source));
-//
-//            messageBodyPart.setFileName(filePath);
-//
-//            multipart.addBodyPart(messageBodyPart);
-
-//            mm.setContent(multipart);
 
         } catch (MessagingException e) {
             e.printStackTrace();
