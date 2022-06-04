@@ -56,6 +56,10 @@ public class LoginSignUpActivity extends AppCompatActivity {
     }
 
     private void createEvents(){
+        ivCancel.setOnClickListener(v -> {
+            Intent intent= new Intent(this, LoginActivity.class);
+            startActivity(intent);
+        });
         rbMale.setChecked(true);
         tvSignupLogin.setOnClickListener(v -> {
             Intent intent = new Intent(context, LoginActivity.class);

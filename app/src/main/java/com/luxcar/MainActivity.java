@@ -19,6 +19,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.luxcar.activities.admin.AdminActivity;
+import com.luxcar.activities.home.Home;
+import com.luxcar.activities.login.LoginActivity;
 import com.luxcar.configurations.DatabaseOpenHelper;
 
 import java.io.IOException;
@@ -86,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if(counter==100){
                     timer.cancel();
-                    Intent intent= new Intent(MainActivity.this, AdminActivity.class);
+                    Intent intent= new Intent(MainActivity.this, LoginActivity.class);
                     startActivity(intent);
                 }
             }

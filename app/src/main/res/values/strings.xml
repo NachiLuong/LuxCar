@@ -17,6 +17,8 @@
     <string name="validateRepeatPass">Password not match</string>
     <string name="validateAddress">Please enter address</string>
     <string name="validateDob">Please enter Birthday</string>
+    <string name="open">open</string>
+    <string name="colse">close</string>
 
 
 </resources>

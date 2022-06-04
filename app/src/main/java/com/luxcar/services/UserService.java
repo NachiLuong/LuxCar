@@ -34,4 +34,10 @@ public class UserService {
         return UserRepository.instance().delete(whereClause, whereArgs);
     }
     public List<User> findAllUser(){return UserRepository.instance().findAll();}
+
+    public Integer updateUser(User user, String whereClause, String[] whereArgs){
+        return UserRepository.instance().update(user,whereClause,whereArgs );
+    }
+    public User finOneUser(Integer id){return UserRepository.instance().findOne(id);}
+
 }

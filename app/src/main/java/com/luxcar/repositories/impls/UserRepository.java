@@ -57,7 +57,7 @@ public class UserRepository extends Repository<User> {
     }
 
     public User findByEmail(@NonNull String email, @NonNull String password) {
-        List<User> result = this.query("SELECT * FROM user WHERE email = ? AND password", new String[]{email, password});
+        List<User> result = this.query("SELECT * FROM user WHERE email = ? AND password = ?", new String[]{email, password});
         if (!result.isEmpty()) {
             return result.get(0);
         }

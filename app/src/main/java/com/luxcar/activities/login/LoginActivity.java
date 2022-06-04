@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,6 +20,7 @@ import com.basgeekball.awesomevalidation.ValidationStyle;
 import com.basgeekball.awesomevalidation.utility.RegexTemplate;
 import com.luxcar.R;
 import com.luxcar.activities.admin.AdminActivity;
+import com.luxcar.activities.home.Home;
 import com.luxcar.configurations.ApplicationProperties;
 import com.luxcar.models.entities.User;
 import com.luxcar.services.UserService;
@@ -62,24 +64,29 @@ public class LoginActivity extends AppCompatActivity {
 
     private void createEvents() {
         btnLogin.setOnClickListener(view -> {
-            String email = etEmail.getText().toString();
-            String password = etPassword.getText().toString();
-            if(email.equals("admin@gmail.com") && password.equals("12345679")){
-                Intent intentForgotPassword = new Intent(LoginActivity.this, AdminActivity.class);
-                startActivity(intentForgotPassword);
-            }
-          /*  validate();
+
+
+            validate();
             if(awesomeValidation.validate()){
                 String email = etEmail.getText().toString();
                 String password = etPassword.getText().toString();
-                User user = UserService.instance().isExist(email, password);
-                if (user != null) {
-                    SharedPreferences.Editor edit = ApplicationProperties.SHARED_PREFERENCES.edit();
-                    edit.putInt("user_id", user.getId());
-                    edit.apply();
-                    Log.i("Login", "Success!");
+
+                if(email.equals("admin@gmail.com") && password.equals("12345679")){
+                    Intent intent = new Intent(LoginActivity.this, AdminActivity.class);
+                    startActivity(intent);
                 }
-            }*/
+                else {
+                    User user = UserService.instance().isExist(email, password);
+                    if (user != null) {
+                        Intent intent = new Intent(LoginActivity.this, Home.class);
+                        startActivity(intent);
+                    }else {
+                        Toast.makeText(this,"Username or password is wrong",  Toast.LENGTH_SHORT).show();
+
+                    }
+                }
+
+            }
 
         });
 

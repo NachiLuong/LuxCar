@@ -54,8 +54,8 @@ public class UserAdapter extends BaseAdapter {
             LayoutInflater inflater= (LayoutInflater) context.getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(layout,null);
 
-            viewHolder.imgDelete = view.findViewById(R.id.adminItemEdit);
-            viewHolder.imgEdit= view.findViewById(R.id.adminItemDelete);
+            viewHolder.imgDelete = view.findViewById(R.id.adminItemDelete);
+            viewHolder.imgEdit= view.findViewById(R.id.adminItemEdit);
             viewHolder.name = view.findViewById(R.id.adminItemDown);
             viewHolder.email = view.findViewById(R.id.adminItemTop);
 
@@ -70,12 +70,13 @@ public class UserAdapter extends BaseAdapter {
         viewHolder.name.setText(user.getName());
         viewHolder.email.setText(user.getEmail());
 
-//        viewHolder.imgEdit.setOnClickListener(view12 ->
-//                context.dialogUpdate(baiHoc.getTen(), baiHoc.getNoidung(), baiHoc.getId())
-//        );
-//        viewHolder.imgDelete.setOnClickListener(view1 ->
-//                context.dialogDelete(baiHoc.getTen(), baiHoc.getNoidung(), baiHoc.getId())
-//        );
+        viewHolder.imgEdit.setOnClickListener(view12 ->
+                context.dialogUpdate(user.getEmail(), user.getName(), user.getPassword(),
+                        user.getPhone(), user.getAddress(), user.getDob() ,user.getId())
+        );
+        viewHolder.imgDelete.setOnClickListener(view1 ->
+                context.dialogDelete(user.getName(), user.getId())
+        );
         return view;
     }
 }

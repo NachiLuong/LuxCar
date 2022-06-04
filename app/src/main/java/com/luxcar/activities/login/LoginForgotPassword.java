@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.luxcar.MainActivity;
 import com.luxcar.R;
 import com.luxcar.utils.JavaMail;
 
@@ -31,6 +32,10 @@ public class LoginForgotPassword extends AppCompatActivity {
         ivCancel = findViewById(R.id.ivCancel2);
     }
     private void createEvents(){
+        ivCancel.setOnClickListener(v -> {
+            Intent intent= new Intent(this, LoginActivity.class);
+            startActivity(intent);
+        });
         btnSend.setOnClickListener(v -> {
             String mail = etForgotEmail.getText().toString();
             String message = "hahahaha";
