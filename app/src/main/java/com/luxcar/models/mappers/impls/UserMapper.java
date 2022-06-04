@@ -9,7 +9,6 @@ import com.luxcar.models.mappers.ApplicationMapper;
 import com.luxcar.models.types.Gender;
 import com.luxcar.models.types.Role;
 import com.luxcar.models.types.Status;
-import com.luxcar.repositories.impls.BillRepository;
 
 import java.sql.Timestamp;
 import java.util.Optional;
@@ -33,13 +32,18 @@ public class UserMapper implements ApplicationMapper<User> {
                     .id(cursor.getInt(0))
                     .email(cursor.getString(1))
                     .password(cursor.getString(2))
-                    .gender(Gender.valueOf(cursor.getString(3)))
-                    .dob(Timestamp.valueOf(cursor.getString(4)))
-                    .phone(cursor.getString(5))
-                    .role(Role.valueOf(cursor.getString(6)))
-                    .status(Status.valueOf(cursor.getString(7)))
-                    .address(cursor.getString(8))
-                    .bills(BillRepository.instance().findAll("user_id = ?", new String[]{String.valueOf(cursor.getString(0))}))
+                    .name(cursor.getString(3))
+                    .gender(Gender.valueOf(cursor.getString(4)))
+                    .dob(Timestamp.valueOf("2021-03-24 16:48:05.591"))
+                    .phone(cursor.getString(6))
+                    .role(Role.valueOf(cursor.getString(7)))
+                    .status(Status.valueOf(cursor.getString(8)))
+                    .address(cursor.getString(9))
+                    .createdDate(Timestamp.valueOf("2021-03-24 16:48:05.591"))
+                    .createdBy(cursor.getString(11))
+                    .modifiedDate(Timestamp.valueOf("2021-03-24 16:48:05.591"))
+                    .modifiedBy(cursor.getString(13))
+//                    .bills(BillRepository.instance().findAll("user_id = ?", new String[]{String.valueOf(cursor.getString(0))}))
                     .build();
         } catch (Exception e) {
             e.printStackTrace();
@@ -47,3 +51,5 @@ public class UserMapper implements ApplicationMapper<User> {
         }
     }
 }
+
+

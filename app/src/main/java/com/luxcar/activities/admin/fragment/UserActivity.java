@@ -57,6 +57,7 @@ public class UserActivity extends Fragment  {
         adapter = new UserAdapter(this, R.layout.admin_single_item, users);
         lv.setAdapter(adapter);
         adapter.notifyDataSetChanged();
+
       /*  try {
             Cursor users = databaseOpenHelper.GetData("SELECT * FROM user");
             arrayList.clear();

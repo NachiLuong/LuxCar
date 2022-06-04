@@ -1,12 +1,10 @@
 package com.luxcar.models.mappers.impls;
-
 import android.database.Cursor;
 
 import androidx.annotation.NonNull;
 
 import com.luxcar.models.entities.Brand;
 import com.luxcar.models.mappers.ApplicationMapper;
-import com.luxcar.repositories.impls.CarRepository;
 
 import java.sql.Timestamp;
 import java.util.Optional;
@@ -31,11 +29,11 @@ public class BrandMapper implements ApplicationMapper<Brand> {
                     .name(cursor.getString(1))
                     .description(cursor.getString(2))
                     .logo(cursor.getBlob(3))
-                    .createdDate(Timestamp.valueOf(cursor.getString(4)))
+                    .createdDate(Timestamp.valueOf("2021-03-24 16:48:05.591"))
                     .createdBy(cursor.getString(5))
-                    .modifiedDate(Timestamp.valueOf(cursor.getString(6)))
+                    .modifiedDate(Timestamp.valueOf("2021-03-24 16:48:05.591"))
                     .modifiedBy(cursor.getString(7))
-                    .cars(CarRepository.instance().findAll("brand_id = ?", new String[]{String.valueOf(cursor.getInt(0))}))
+//                    .cars(CarRepository.instance().findAll("brand_id = ?", new String[]{String.valueOf(cursor.getInt(0))}))
                     .build();
         } catch (Exception e) {
             e.printStackTrace();
@@ -43,3 +41,4 @@ public class BrandMapper implements ApplicationMapper<Brand> {
         }
     }
 }
+

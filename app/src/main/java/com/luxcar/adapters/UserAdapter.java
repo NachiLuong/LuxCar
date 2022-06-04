@@ -42,7 +42,7 @@ public class UserAdapter extends BaseAdapter {
         return 0;
     }
     private static class ViewHolder {
-        EditText email, password, name, phone, address, dob;
+        TextView email, password, name, phone, address, dob;
         RadioGroup rdgSex, rdgRole;
         ImageView imgEdit, imgDelete;
     }

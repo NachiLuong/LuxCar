@@ -82,6 +82,8 @@ public class Repository<T> implements IRepository<T> {
             e.fillInStackTrace();
         }
         return null;
+//        delete("id = ? and name = ?", new String[]("9","trung"))
+//        delete("id = ?", new String[]("9"))
     }
 
     public Consumer<ContentValues> integrityCreated = values -> {

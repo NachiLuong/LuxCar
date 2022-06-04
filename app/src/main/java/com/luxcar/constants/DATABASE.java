@@ -2,6 +2,10 @@ package com.luxcar.constants;
 
 public interface DATABASE {
 
+    // INFO
+    String NAME = "luxcar";
+    Integer VERSION = 1;
+
     // CREATE
     String CREATE_BRAND = "create_brand";
     String CREATE_CAR = "create_car";
@@ -16,3 +20,4 @@ public interface DATABASE {
     String DROP_USER = "drop_user";
     String DROP_BILL = "drop_bill";
 }
+

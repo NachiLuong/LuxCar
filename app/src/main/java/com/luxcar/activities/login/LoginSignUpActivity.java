@@ -131,6 +131,10 @@ public class LoginSignUpActivity extends AppCompatActivity {
                             .address(address)
                             .phone(phone)
                             .build());
+                    if(a == -1){
+                        Toast.makeText(this, "Sig up fail", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
                 }
                 else { // đã tồn tại
                     Toast.makeText(this, "Email is exist", Toast.LENGTH_SHORT).show();

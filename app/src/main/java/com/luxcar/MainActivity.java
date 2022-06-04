@@ -42,8 +42,8 @@ public class MainActivity extends AppCompatActivity {
         configure();
 
 //        DATABASE_OPEN_HELPER.onUpgrade(DATABASE_OPEN_HELPER.getWritableDatabase(), 4, 5);
-        DATABASE_OPEN_HELPER.onCreate(DATABASE_OPEN_HELPER.getWritableDatabase());
-//
+//        DATABASE_OPEN_HELPER.onCreate(DATABASE_OPEN_HELPER.getWritableDatabase());
+
         createComponents();
         progressBarAnimation();
     }

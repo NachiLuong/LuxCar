@@ -8,10 +8,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFFFFF"
         tools:context=".activities.login"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="-134dp">
+        tools:layout_editor_absoluteX="-34dp"
+        tools:layout_editor_absoluteY="-16dp">
 
         <EditText
             android:id="@+id/etSignupDob"
@@ -20,11 +19,12 @@
             android:layout_marginStart="56dp"
             android:layout_marginBottom="124dp"
             android:ems="10"
-            android:hint="Day of Birth"
             android:enabled="false"
+            android:hint="Day of Birth"
             android:inputType="textPersonName"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroupSex" />
 
         <EditText
             android:id="@+id/etSignupAddress"
@@ -108,6 +108,7 @@
             android:ems="10"
             android:hint="Email"
             android:inputType="textEmailAddress"
+            android:textColor="#000000"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -118,8 +119,10 @@
             android:layout_height="48dp"
             android:layout_marginTop="5dp"
             android:ems="10"
+
             android:hint="Password"
             android:inputType="textPassword"
+            android:textColor="#000000"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etSignupEmail" />
@@ -128,14 +131,14 @@
             android:id="@+id/btnSignup"
             android:layout_width="298dp"
             android:layout_height="48dp"
-            android:layout_marginTop="196dp"
+            android:layout_marginTop="28dp"
             android:backgroundTint="@color/black"
-            android:text="SIGN UP"
 
+            android:text="SIGN UP"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintHorizontal_bias="0.469"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etSignupPhone" />
+            app:layout_constraintTop_toBottomOf="@+id/etSignupDob" />
 
         <TextView
             android:id="@+id/tvSignupLogin"
@@ -171,7 +174,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
 
-            >
+            app:layout_constraintTop_toBottomOf="@+id/etSignupAddress">
 
             <RadioButton
                 android:id="@+id/rbFemale"
@@ -206,7 +209,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/radioGroupSex"
             app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etSignupAddress" />
 
         <ImageView
             android:id="@+id/ivCalendar"
@@ -216,6 +220,7 @@
             android:layout_marginBottom="124dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroupSex"
             app:srcCompat="@drawable/ic_calendar" />
 
 

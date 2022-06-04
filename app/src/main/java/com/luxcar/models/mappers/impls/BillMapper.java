@@ -31,9 +31,9 @@ public class BillMapper implements ApplicationMapper<Bill> {
                     .id(cursor.getInt(0))
                     .quantity(cursor.getInt(1))
                     .price(cursor.getDouble(2))
-                    .createdDate(Timestamp.valueOf(cursor.getString(4)))
+                    .createdDate(Timestamp.valueOf("2021-03-24 16:48:05.591"))
                     .createdBy(cursor.getString(5))
-                    .modifiedDate(Timestamp.valueOf(cursor.getString(6)))
+                    .modifiedDate(Timestamp.valueOf("2021-03-24 16:48:05.591"))
                     .modifiedBy(cursor.getString(7))
                     .user(UserRepository.instance().findOne(cursor.getInt(8)))
                     .car(CarRepository.instance().findOne(cursor.getInt(9)))
@@ -44,3 +44,4 @@ public class BillMapper implements ApplicationMapper<Bill> {
         }
     }
 }
+
